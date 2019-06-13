@@ -118,6 +118,9 @@ mkdir /undolog && chown mysql:mysql /undolog/
 /usr/local/mysql/bin/mysql_ssl_rsa_setup
 chown -R mysql:mysql /data/mysqldata3306/*.pem
 /etc/init.d/mysqld start
+chkconfig mysqld on
+chkconfig --add mysqld
+
 #启动完成之后密码在error.log日志中可以查看到。如下提示：
 #[Note] A temporary password is generated for root@localhost: oSYrVffpB6:D
 #安装完mysql 之后，登陆以后，不管运行任何命令，总是提示这个mysql error You must reset your password using ALTER USER statement before executing this statement.
