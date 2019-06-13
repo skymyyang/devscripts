@@ -2,6 +2,7 @@
 
 import sys
 import os
+import commands
 
 
 def InitSys():
@@ -40,7 +41,7 @@ def InitSys():
     print("关闭Firewalld 成功!")
 
     res2 = os.system("""
-    cat >> /etc/sysctl.conf << EOF
+cat >> /etc/sysctl.conf << EOF
 vm.overcommit_memory = 1
 net.ipv4.tcp_mem = 94500000 915000000 927000000
 net.ipv4.tcp_fin_timeout = 30
@@ -227,13 +228,18 @@ log-error=/app/local/mysql/logs/mysqld-safe.log
             print("MySQL安装成功！")
 
 
+class InstallDotnet():
+    def __init__(self):
+        pass
+    def Install(self):
+        os.system("rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm")
+        os.system("yum install dotnet-sdk-2.1 -y")
+        status, output = commands.getstatusoutput("dotnet --version")
+        print status,output
+
 if __name__ == "__main__":
-    mysql = InstallMySQL()
-    res = mysql.Install()
-    if res == 0:
-        print("安装失败！！ 别配置了！！")
-    if res == 1:
-        mysql.Config()
+    """需要安装什么，就初始化所需实例即可"""
+    InitSys()
 
 
 
