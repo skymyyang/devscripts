@@ -14,7 +14,7 @@ DATE=`date "+%Y.%m.%d.%H"`
 #备份语句
 $BIN_DIR/mongodump --host 127.0.0.1 --port 11000 --out $BCK_DIR/$DATE -u $DB_USER -p $DB_PASS
 #进行压缩
-zip -rm $BCK_DIR/$DB_NAME-$DATE.zip $BCK_DIR/$DATE
+zip -rqm $BCK_DIR/$DB_NAME-$DATE.zip $BCK_DIR/$DATE
 #上传到sftp
 cd $BCK_DIR
 for db_back in $DB_NAME

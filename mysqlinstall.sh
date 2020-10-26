@@ -23,8 +23,7 @@ cat > /etc/my.cnf <<EOF
 server-id = 11 
 port = 3306
 user = mysql
-bind_address = 192.168.150.142
-autocommit = 0
+bind_address = 0.0.0.0
 character_set_server=utf8mb4
 skip_name_resolve = 1
 max_connections = 800
@@ -67,7 +66,7 @@ relay_log_recovery = 1
 binlog_gtid_simple_recovery = 1
 slave_skip_errors = ddl_exist_errors
 ########innodb settings########
-innodb_page_size = 8192
+innodb_page_size = 16384
 innodb_buffer_pool_size = 6G
 innodb_buffer_pool_instances = 8
 innodb_buffer_pool_load_at_startup = 1
@@ -132,3 +131,4 @@ chkconfig --add mysqld
 #step 3: flush privileges;
 
 #完成以上三步退出再登，使用新设置的密码就行了，以上除了红色的自己修改成新密码外，其他原样输入即可
+#之后可以通过/usr/local/mysql/bin/mysql_secure_installation 进行初始化
