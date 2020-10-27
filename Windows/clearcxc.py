@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+#Windows下IIS对应站点的应用程序池经常挂掉，也没有找到原因，就写了个循环，去判断应用程序池是否挂掉，挂掉的话，进行重启
+#将此脚本添加到Windows的计划任务即可
 
 import os
 import pycurl
