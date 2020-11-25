@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-export JAVA_HOME=/usr/local/jdk1.8.0_121;
-export CLASS_PATH=$JAVA_HOME/lib:$JAVA_HOME/jre/lib;
-export PATH=.:$PATH:$JAVA_HOME/bin:/usr/local/mysql/bin;
+export JAVA_HOME=/usr/local/jdk1.8.0_121
+export CLASS_PATH=$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+export PATH=.:$PATH:$JAVA_HOME/bin:/usr/local/mysql/bin
 
 tomcat_base=/usr/local/server/tomcatall
 TOMCAT_PATH=${tomcat_base}/bin

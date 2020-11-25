@@ -118,4 +118,5 @@ PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
+EOF
 systemctl daemon-reload && systemctl start nginx && systemctl enable nginx
