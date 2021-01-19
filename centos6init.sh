@@ -55,7 +55,7 @@ close_iptables
 echo "---优化文件最大打开数---"
 
 sysctl_limits_deploy(){
-    cat>/etc/security/limits.d/99-limits.conf<<EOF
+    cat>>/etc/security/limits.d/99-limits.conf<<EOF
 *       soft    nproc   131072
 *       hard    nproc   131072
 *       soft    nofile  131072
