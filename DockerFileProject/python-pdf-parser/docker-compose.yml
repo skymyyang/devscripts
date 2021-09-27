@@ -1,0 +1,9 @@
+version: "3"
+services:
+  pdf-parser:
+    image: pdf-parser-server:20210105
+    container_name: pdfparser-server
+    volumes:
+      - ./data/pdf:/app/pdf
+    ports:
+      - "5000:5000"
